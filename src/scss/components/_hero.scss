@@ -1,0 +1,45 @@
+.hero {
+  padding-top: 87px;
+  margin-bottom: 129px;
+  @media(max-width: 992px) {
+    margin-bottom: 70px;
+  }
+  &__wrapper {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__left {
+    max-width: 958px;
+  }
+
+  &__title{ 
+    margin: 0;
+    margin-bottom: 34px;
+    font-size: clamp(40px, 4vw, 64px);
+  }
+
+  &__right {
+    margin-left: auto;
+    padding-right: 40px;
+  }
+
+  &__slider {
+    margin-top: 20px;
+    .ticker-swiper {
+      .ticker-swiper-slide {
+        font-family: var(--font-family);
+        font-weight: 700;
+        font-size: 300px;
+        line-height: normal;
+        text-transform: uppercase;
+        color: var(--dark);
+        box-sizing: border-box;
+        width: auto !important;
+        @media(max-width: 1200px) {
+          font-size: clamp(80px, 10vw, 150px);
+        }
+      }
+    }
+  }
+}
