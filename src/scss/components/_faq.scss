@@ -1,0 +1,96 @@
+.faq {
+  margin-bottom: 150px;
+  @media(max-width: 992px) {
+    margin-bottom: 90px;
+  }
+  &__items {
+    display: grid;
+    align-items: flex-start;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    counter-reset: steps;
+  }
+  &__item {
+    border-top: 1px solid #a2a2a2;
+    border-bottom: 1px solid #a2a2a2;
+    padding: 37px 0 37px 0;
+    display: grid;
+    transition: .3s ease;
+    position: relative;
+    &:before {
+      counter-increment: steps;
+      content: counter(steps) "/";
+      font-family: var(--font-family);
+      font-weight: 500;
+      font-size: clamp(16px, 3vw, 32px);
+      line-height: 117%;
+      color: var(--accent);
+      position: absolute;
+      top: 43px;
+      left: 0;
+    }
+    &-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-left: 42px;
+    }
+
+    &-toggler {
+      width: 50px;
+      height: 50px;
+      background-color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color .3s ease;
+      svg {
+        pointer-events: none;
+        .v-line {
+          transition: .3s ease;
+        }
+      }
+    }
+    &-title {
+      font-family: var(--font-family);
+      font-weight: 500;
+      font-size: clamp(12px, 4vw, 32px);
+      line-height: 117%;
+      color: var(--dark);
+    }
+
+    &-bottom {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition:  all .3s ease;
+    }
+    &-content {
+      margin-top: 0; // clamp(16px, 2vw, 33px)
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: clamp(12px, 2vw, 20px);
+      line-height: 120%;
+      color: var(--dark);
+      transition: margin-top .3s ease;
+      overflow: hidden;
+    }
+  }
+}
+
+.faq__item--active .faq__item-bottom {
+  grid-template-rows: 1fr;
+}
+
+.faq__item--active .faq__item-content {
+  margin-top: clamp(16px, 2vw, 33px);
+  opacity: 1;
+}
+.faq__item--active .faq__item-toggler {
+  background-color: var(--dark);
+}
+
+.faq__item--active .faq__item-toggler .v-line {
+  opacity: 0;
+}

@@ -11,6 +11,17 @@ export const accordion = () => {
   function openAccordion(target) {
     let parent = target.closest(".faq__item");
 
+    if (parent.classList.contains('faq__item--active')) {
+      parent.classList.remove('faq__item--active');
+      return;
+    }
+
+    const items = document.querySelectorAll('.faq__item');
+
+    items.forEach((item) => {
+      item.classList.remove('faq__item--active');
+    })
+
     parent.classList.toggle("faq__item--active");
   }
 };

@@ -93,6 +93,8 @@ import { MY_SELECT } from "./functions/my-select";
 import { listener } from "./functions/listener";
 import { auto } from "@popperjs/core";
 
+accordion();
+
 const heroMap = document.querySelectorAll('.hero__img path');
 
 

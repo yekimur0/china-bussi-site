@@ -1,0 +1,36 @@
+.telegram {
+  margin-bottom: 150px;
+  @media(max-width: 992px) {
+    margin-bottom: 70px;
+  }
+  &__container {
+    background: url('../../img/telegram-bg.webp') center / cover no-repeat;
+    min-height: 550px;
+    border-radius: 7px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+
+  }
+  &__subtitle {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 117%;
+    color: var(--dark);
+    margin-bottom: 24px;
+  }
+
+  &__title {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 109%;
+    text-transform: uppercase;
+    color: var(--dark);
+  }
+  &__btn {
+    margin-top: auto;
+    max-width: 250px;
+  }
+}
