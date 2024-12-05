@@ -9,6 +9,9 @@
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     counter-reset: steps;
+    @media(max-width: 992px) {
+      grid-template-columns: 1fr;
+    }
   }
   &__item {
     border-top: 1px solid #a2a2a2;
@@ -17,23 +20,32 @@
     display: grid;
     transition: .3s ease;
     position: relative;
+    @media(max-width: 992px) {
+      padding: 23px 0;
+    }
     &:before {
       counter-increment: steps;
       content: counter(steps) "/";
       font-family: var(--font-family);
       font-weight: 500;
-      font-size: clamp(16px, 3vw, 32px);
+      font-size: clamp(16px, 2vw, 32px);
       line-height: 117%;
       color: var(--accent);
       position: absolute;
-      top: 43px;
+      top: 44px;
       left: 0;
+      @media(max-width: 992px) {
+        top: 29px;
+      }
     }
     &-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding-left: 42px;
+      @media(max-width: 992px) {
+        padding-left: 20px;
+      }
     }
 
     &-toggler {
@@ -46,6 +58,10 @@
       cursor: pointer;
       border-radius: 5px;
       transition: background-color .3s ease;
+      @media(max-width: 992px) {
+        width: 32px;
+        height: 32px;
+      }
       svg {
         pointer-events: none;
         .v-line {
@@ -56,7 +72,7 @@
     &-title {
       font-family: var(--font-family);
       font-weight: 500;
-      font-size: clamp(12px, 4vw, 32px);
+      font-size: clamp(12px, 2vw, 32px);
       line-height: 117%;
       color: var(--dark);
     }

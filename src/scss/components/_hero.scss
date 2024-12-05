@@ -4,9 +4,23 @@
   @media(max-width: 992px) {
     margin-bottom: 70px;
   }
+  @media(max-width: 640px) {
+    padding-top: 34px;
+  }
+  .container {
+    padding: 0;
+  }
   &__wrapper {
     display: flex;
     align-items: flex-start;
+    position: relative;
+    @media(max-width: 992px) {
+      flex-direction: column;
+    }
+    @media(max-width: 640px) {
+      padding-bottom: 160px;
+      overflow: hidden;
+    }
   }
 
   &__left {
@@ -17,16 +31,45 @@
     margin: 0;
     margin-bottom: 34px;
     font-size: clamp(40px, 4vw, 64px);
+    @media(max-width: 640px) {
+      padding-left: 10px;
+      margin-bottom: 64px;
+      position: relative;
+      &:before {
+        content: '';
+        position: absolute;
+        width: 275px;
+        height: 137px;
+        background: linear-gradient(176deg, #f2f2f2 11.58%, rgba(242, 242, 242, 0) 70.94%);
+        bottom: -80px;
+        z-index: 1;
+      }
+      span {
+        position: relative;
+        z-index: 12;
+      }
+    }
   }
 
   &__right {
     margin-left: auto;
     padding-right: 40px;
+    @media(max-width: 1200px) {
+      padding-right: 0;
+    }
+    @media(max-width: 640px) {
+      position: absolute;
+      top: 150px;
+      width: 120vw;
+    }
   }
 
   &__slider {
     margin-top: 20px;
     .ticker-swiper {
+      .swiper-wrapper {
+        align-items: flex-end;
+      }
       .ticker-swiper-slide {
         font-family: var(--font-family);
         font-weight: 700;
@@ -39,7 +82,40 @@
         @media(max-width: 1200px) {
           font-size: clamp(80px, 10vw, 150px);
         }
+        img {
+          border-radius: 5px;
+        }
+        img {
+          @media(max-width: 1200px) {
+            height: 174px;
+            width: 268px;
+          }
+          @media(max-width: 640px) {
+            width: 161px;
+            height: 106px;
+          }
+        }
       }
+    }
+  }
+  .btn {
+    @media(max-width: 640px) {
+      display: none;
+    }
+  }
+  &__img {
+    max-width: 780px;
+    width: 40vw;
+    @media(max-width: 992px) {
+      width: 80vw;
+    }
+    @media(max-width:640px) {
+      width: 100%;
+      max-width: 100%;
+    }
+    svg {
+      max-width: 100%;
+      height: 100%;
     }
   }
 }

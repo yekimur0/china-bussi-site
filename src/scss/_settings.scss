@@ -133,6 +133,10 @@ a {
       color: var(--dark);
     }
   }
+  @media(max-width: 640px) {
+    font-size: 12px;
+    padding: 12px 10px;
+  }
 }
 
 .icon {
@@ -204,9 +208,12 @@ a {
 
 .appear {
   opacity: 0;
-  // transform: scale(0.5);
   animation: appear 0.5s ease forwards;
+}
 
+.appear-opacity {
+  opacity: 0;
+  animation: appear-op 0.5s ease forwards;
 }
 
 @keyframes appear {
@@ -217,6 +224,15 @@ a {
   to {
     opacity: 1;
      transform: scale(1);
+  }
+}
+
+@keyframes appear-op {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 

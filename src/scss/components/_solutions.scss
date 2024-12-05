@@ -7,17 +7,24 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
+    @media(max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__items {
     display: grid;
-    gap: 20px;
+    gap: clamp(10px, 1vw, 20px);
   }
 
   &__visually {
     height: 100%;
+    @media(max-width: 640px) {
+      max-height: 162px;
+    }
     img {
       height: 100%;
+      width: 100%;
       border-radius: 14px;
     }
   }
@@ -25,7 +32,7 @@
   &__item {
     border: 1px solid #a2a2a2;
     border-radius: 7px;
-    padding: 20px;
+    padding: clamp(14px, 1vw, 20px);
     display: grid;
     grid-template-columns: clamp(20px, 3vw, 32px) 1fr;
     align-items: flex-start;
@@ -42,11 +49,11 @@
     &-title {
       font-family: var(--font-family);
       font-weight: 500;
-      font-size: clamp(16px, 3vw, 32px);
+      font-size: clamp(16px, 2vw, 32px);
       line-height: 109%;
       color: var(--dark);
       margin: 0;
-      margin-bottom: clamp(16px, 3vw, 32px);
+      margin-bottom: clamp(16px, 2vw, 32px);
       max-width: 540px;
     }
 

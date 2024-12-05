@@ -7,6 +7,10 @@
     display: flex;
     justify-content: space-between;
     gap: 20px;
+    @media(max-width: 768px) {
+      padding: 8px 12px;
+      margin-top: 10px;
+    }
   }
 
   &__left {
@@ -18,11 +22,14 @@
   &__work {
     font-family: var(--font-family);
     font-weight: 400;
-    font-size: 18px;
+    font-size: clamp(14px, 1vw, 18px);
     color: var(--white);
     border-left: 2px solid rgba(198, 198, 198, 0.2);
     padding-left: 24px;
     transform: translateY(-5px);
+    @media(max-width: 1140px) {
+      display: none;
+    }
   }
 
   &__right {
@@ -35,6 +42,9 @@
     flex-direction: column;
     gap: 5px;
     margin-right: 48px;
+    @media(max-width: 992px) {
+      display: none;
+    }
     &-city {
       color: var(--white);
       display: flex;
@@ -42,8 +52,8 @@
       justify-content: space-between;
       font-family: var(--font-family);
       font-weight: 600;
-      font-size: 18px;
-      gap: 24px;
+      font-size: clamp(14px, 1vw, 18px);
+      gap: clamp(10px, 1vw, 24px);
     }
 
     .time {
@@ -55,12 +65,32 @@
     display: flex;
     gap: 12px;
     margin-right: 20px;
+    @media(max-width: 992px) {
+      margin-right: 6px;
+    }
   }
 
   &__btn {
     width: 100%;
   }
+  &__logo {
+    @media(max-width: 1366px) {
+      max-width: 182px;
+      display: flex;
+      align-items: end;
+      justify-content: end;
+    }
+    @media(max-width: 640px) {
+      max-width: 124px;
+      
+    }
+  }
 
+  &__icon {
+    @media(max-width: 768px) {
+      display: none;
+    }
+  }
 }
 
 .burger {

@@ -96,7 +96,7 @@ import { auto } from "@popperjs/core";
 accordion();
 
 const heroMap = document.querySelectorAll('.hero__img path');
-
+const footerDots = document.querySelectorAll('.footer__dots circle');
 
 
 function shuffleArray(array) {
@@ -116,4 +116,33 @@ function setAnimationForMap(selector) {
   });
 }
 
+function setAnimationForMapOpacity(selector) {
+  const shuffled = shuffleArray([...selector]);
+
+  shuffled.forEach((circle, index) => {
+    circle.style.animationDelay = `${index * 2}ms`;
+    circle.classList.add('appear-opacity');
+  });
+}
+
 setAnimationForMap(heroMap);
+
+
+const obsOpt = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.1,
+}
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      setAnimationForMapOpacity(footerDots);
+      observer.unobserve(entry.target);
+    }
+  })
+}, obsOpt)
+
+if (footerDots) {
+  observer.observe(document.querySelector('footer'));
+}
