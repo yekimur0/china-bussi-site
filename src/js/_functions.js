@@ -51,15 +51,19 @@ const SWIPER_TICKER = new Swiper('.ticker-swiper', {
   spaceBetween: 20,
 
   autoplay: {
-    delay: 1000, // Задержка между слайдами в миллисекундах
+    delay: 100, // Задержка между слайдами в миллисекундах
     disableOnInteraction: false, // Продолжать автоплей после взаимодействия
   },
-  speed: 3000,
+  speed: 3500,
 })
 
 
 // Подключение анимаций по скроллу
-// import AOS from "aos";
+import AOS from "aos";
+AOS.init({
+  once: true,
+  offset: 200
+});
 
 // Подключение параллакса блоков при скролле
 // import Rellax from 'rellax';
@@ -92,6 +96,14 @@ import { accordion } from "./functions/accordion";
 import { MY_SELECT } from "./functions/my-select";
 import { listener } from "./functions/listener";
 import { auto } from "@popperjs/core";
+import Inputmask from "inputmask";
+
+
+const tel = document.querySelectorAll('.tel')
+const inputMask = new Inputmask('+7 (999) 999-99-99');
+tel.forEach((item) => {
+  inputMask.mask(item);
+})
 
 accordion();
 
@@ -146,3 +158,23 @@ const observer = new IntersectionObserver((entries, observer) => {
 if (footerDots) {
   observer.observe(document.querySelector('footer'));
 }
+
+
+function fixedHeader() {
+  const header = document.querySelector('.header');
+  const innerHeightHeader = header.getBoundingClientRect();
+  const main = document.querySelector('.main')
+  window.addEventListener('scroll', (e) => {
+      let scrollY = window.scrollY;
+      
+      if (scrollY >= 250) {
+          header.classList.add('fixed--header')
+          main.style.marginTop = `${innerHeightHeader.height}` + 'px';
+      } else {
+          header.classList.remove('fixed--header')
+          main.style.marginTop = 0;
+      }
+  })
+}
+
+fixedHeader();

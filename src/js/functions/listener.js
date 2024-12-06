@@ -5,18 +5,21 @@ export const listener = () => {
 
         if (target.classList.contains('registry__changer-block')) changeWrapper(target);
 
-        function changeWrapper(target) {
-            let id = target.dataset.changer;
-            
-            const activeBlock = document.querySelector('.registry__block--active');
-            const block = document.querySelector(`[data-registry="${id}"]`);
-            let activeTarget = document.querySelector('.registry__changer-block--active');
-            if (activeBlock) activeBlock.classList.remove('registry__block--active');
-            block.classList.add('registry__block--active');
+        if (target.hasAttribute('data-modal-btn')) openModal();
+        if (target.classList.contains('modal') || target.classList.contains('modal__close')) closeModal(target);
 
-            if(activeTarget) activeTarget.classList.remove('registry__changer-block--active')
-            target.classList.add('registry__changer-block--active')
+
+        function closeModal(target) {
+            const activeModal = document.querySelector('.modal--active');
+
+            if (activeModal) activeModal.classList.remove('modal--active');
         }
+
+        function openModal() {
+            const modal = document.getElementById('modal');
+            modal.classList.add('modal--active')
+        }
+        
     })
 }
 

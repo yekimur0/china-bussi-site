@@ -13,6 +13,7 @@
   color: #212121;
   background-color: transparent;
   cursor: pointer;
+  transition: .8s ease;
   @media(max-width: 1140px) {
     display: flex;
   }
@@ -47,6 +48,7 @@
   }
 
   &--active {
+    color: var(--white);
     &::before {
       top: 50%;
       transform: rotate(45deg);
@@ -74,9 +76,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
-  @media(max-width: 1200px) {
+  z-index: 9999;
+  @media(max-width: 640px) {
     width: 40px;
     height: 40px;
   }
 }
+
+.burger__wrapper:has(.burger--active) {
+  background-color: var(--dark);
+}
+
