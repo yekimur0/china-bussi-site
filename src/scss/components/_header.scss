@@ -109,7 +109,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 407px;
+      width: 417px;
       height: 187px;
       background: url('../../img/header-menu-dots.svg') center / cover no-repeat;
       z-index: -1;
@@ -298,8 +298,7 @@
   width: 100%;
   z-index: 99999;
   animation: slideInFromTop 0.3s ease forwards;
-  margin: 0;
-  padding-top: 0;
+  
 
   .nav {
       top: 80px;

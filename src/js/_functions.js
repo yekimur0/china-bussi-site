@@ -167,7 +167,7 @@ function fixedHeader() {
   window.addEventListener('scroll', (e) => {
       let scrollY = window.scrollY;
       
-      if (scrollY >= 250) {
+      if (scrollY >= 550) {
           header.classList.add('fixed--header')
           main.style.marginTop = `${innerHeightHeader.height}` + 'px';
       } else {

@@ -14,15 +14,12 @@
     font-size: clamp(14px, 1vw, 20px);
     line-height: 120%;
     color: var(--white);
-    max-width: 730px;
+    max-width: 700px;
     margin: 0;
-    margin-left: auto;
     @media(max-width: 1440px) {
-      max-width: 700px;
+      max-width: 440px;
     }
-    @media(max-width: 1200px) {
-      max-width: 425px;
-    }
+  
     @media(max-width: 992px) {
       max-width: 100%;
       margin-left: 0;
@@ -32,18 +29,22 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    max-width: 1670px;
     margin-bottom: clamp(48px, 1vw, 64px);
-    @media(max-width: 1700px) {
-      max-width: 1560px;
-    }
-    @media(max-width: 1200px) {
-      max-width: 1000px;
-    }
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     @media(max-width: 992px) {
-      max-width: 100%;
+      grid-template-columns: 1fr;
     }
-  }
+    &-block {
+      grid-column-start: 2;
+      display: grid;
+      gap: clamp(10px, 2vw, 20px);
+      @media(max-width: 992px) {
+        grid-column-start: 1;
+      }
+      
+    }
+  } 
 
   &__wrapper {
     display: grid;
@@ -100,6 +101,7 @@
     border-radius: 7px;
     padding: 20px;
     position: relative;
+    overflow: hidden;
     &:before {
       content: '';
       position: absolute;

@@ -32,6 +32,9 @@
     @media(max-width: 1440px) {
       max-width: 345px;
     }
+    @media(max-width: 1200px) {
+      max-width: 285px;
+    }
     @media(max-width: 640px) {
       flex: 1 1 auto;
       max-width: 100%;
@@ -66,6 +69,7 @@
       @media(max-width: 1200px) {
         font-size: clamp(16px, 2vw, 20px);
         margin-bottom: 20px;
+        padding-top: 140px;
       }
       @media(max-width: 640px) {
         padding-top: 20px;

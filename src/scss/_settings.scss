@@ -14,7 +14,7 @@ html {
   font-family: var(--font-family, sans-serif);
   -webkit-text-size-adjust: 100%;
   scroll-behavior: auto !important;
-  overflow-x: hidden;
+  
 }
 
 .page__body {
@@ -236,3 +236,6 @@ a {
   }
 }
 
+.main {
+  overflow-x: hidden;
+}
