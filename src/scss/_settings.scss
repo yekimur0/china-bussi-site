@@ -14,7 +14,11 @@ html {
   font-family: var(--font-family, sans-serif);
   -webkit-text-size-adjust: 100%;
   scroll-behavior: auto !important;
-  
+  scroll-padding-top: 150px;
+
+  @media(max-width: 992px) {
+    scroll-padding-top: 50px;
+  }
 }
 
 .page__body {
@@ -129,7 +133,6 @@ a {
   @media(any-hover: hover) {
     &:hover {
       background-color: var(--white);
-      border-color: var(--accent);
       color: var(--dark);
     }
   }
@@ -238,4 +241,10 @@ a {
 
 .main {
   overflow-x: hidden;
+}
+
+@media(max-width: 992px) {
+  .container {
+    padding: 0 10px !important;
+  }
 }

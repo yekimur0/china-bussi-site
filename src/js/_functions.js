@@ -178,3 +178,27 @@ function fixedHeader() {
 }
 
 fixedHeader();
+
+
+function updateTime() {
+  const now = new Date();
+
+  const beijingOffset = 12 * 60;
+  const beijingTime = new Date(now.getTime() + (beijingOffset - now.getTimezoneOffset()) * 60000);
+  const beijingFormatted = beijingTime.toTimeString().slice(0, 5);
+
+  const khabarovskOffset = 14 * 60;
+  const khabarovskTime = new Date(now.getTime() + (khabarovskOffset - now.getTimezoneOffset()) * 60000);
+  const khabarovskFormatted = khabarovskTime.toTimeString().slice(0, 5);
+
+  document.querySelectorAll('.time-khv').forEach((item) => {
+    item.textContent = khabarovskFormatted;
+  })
+
+  document.querySelectorAll('.time-china').forEach((item) => {
+    item.textContent = beijingFormatted;
+  })
+}
+
+updateTime();
+setInterval(updateTime, 60000);

@@ -65,19 +65,14 @@
 
   &__middle {
     text-align: center;
-    padding-bottom: 200px;
-    @media(max-width: 640px) {
-      text-align: left;
-      padding-bottom: 30px;
-    }
+    
   }
 
   &__policy {
     font-family: var(--font-family);
     font-weight: 400;
     font-size: clamp(12px, 1vw, 18px);
-    text-decoration: underline;
-    text-decoration-skip-ink: none;
+  
     color: var(--white);
     transition: color .3s ease;
     @include hover {
@@ -92,6 +87,11 @@
     justify-content: space-between;
     gap: 20px;
     flex-wrap: wrap;
+    padding-top: 200px;
+    @media(max-width: 640px) {
+      text-align: left;
+      padding-top: 30px;
+    }
   }
 
   &__left {

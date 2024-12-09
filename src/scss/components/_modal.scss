@@ -27,7 +27,7 @@
   &__container {
     background-color: var(--white);
     position: relative;
-    max-width: 1220px;
+    max-width: 1440px;
     width: 100%;
     border-radius: 7px;
     overflow: hidden;
@@ -45,8 +45,14 @@
     cursor: pointer;
     padding: 10px;
     border-radius: 5px;
+    transition: .3s ease;
     svg {
       pointer-events: none;
+    }
+    @include hover {
+      &:hover {
+        background-color: var(--accent);
+      }
     }
   }
   &__content {
@@ -94,7 +100,11 @@
 
   &__form {
     input {
-      padding-bottom: 32px;
+      padding-bottom: 22px;
+    }
+
+    span {
+      font-size: 16px;
     }
   }
 }

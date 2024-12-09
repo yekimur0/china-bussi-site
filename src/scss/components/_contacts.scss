@@ -16,12 +16,12 @@
   &__left {
     display: flex;
     flex-direction: column;
-    gap: clamp(20px, 2vw, 40px);
+    gap: clamp(20px, 2vw, 24px);
   }
   &__block {
     display: flex;
     flex-direction: column;
-    gap: clamp(10px, 2vw, 20px);
+    gap: clamp(10px, 2vw, 15px);
 
     .small {
       font-family: var(--font-family);
@@ -35,7 +35,7 @@
     .text {
       font-family: var(--font-family);
       font-weight: 500;
-      font-size: clamp(16px, 2vw, 32px);
+      font-size: clamp(16px, 2vw, 22px);
       line-height: 120%;
       color: var(--dark);
       @media(max-width: 1440px) {
